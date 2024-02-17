@@ -21,4 +21,4 @@ const getDateFromPostgreSQL = async ({ pool }) => {
 getDateFromPostgreSQL({ pool })
   .then(result => console.log(result.rows[0]))
   .catch(error => console.log(error))
-  .finally(() => pool.end());
+  .finally(() => pool.end()); // cerramos la conexión luego de obtener el resultado.
