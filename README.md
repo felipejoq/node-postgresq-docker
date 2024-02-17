@@ -4,7 +4,7 @@ Este proyecto es un ejemplo para probar node + postgresql en un contenedor de do
 
 ## Requisitos:
 
-- node.js versión 18 o superio
+- node.js versión 18 o superior
 - docker v24 o superior [WEB oficial descarga](https://www.docker.com/products/docker-desktop/);
 
 ## Ejecutar proyecto de prueba
