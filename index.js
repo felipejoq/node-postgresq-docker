@@ -10,9 +10,17 @@ const pool = new pg.Pool({
 });
 
 const getDateFromPostgreSQL = async ({ pool }) => {
-  return await pool.query('SELECT now()', []);
+  try {
+    const result = await pool.query('SELECT now()', []);
+    return result;
+  } catch (error) {
+    throw error;
+  }
 }
 
 getDateFromPostgreSQL({ pool })
-  .then(result => console.log(result.rows[0]))
+  .then(result => {
+    console.log(result.rows[0]);
+    pool.end(); // cerramos la conexión luego de obtener el resultado.
+  })
   .catch(error => console.log(error));
